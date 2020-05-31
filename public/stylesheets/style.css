@@ -1,8 +1,103 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0 0 5rem;
 }
-
 a {
   color: #00B7FF;
+}
+html{
+  position: relative;
+  min-height: 100%;
+}
+.titulo{
+  text-align: center;
+  text-decoration: underline;
+  color: rgb(20, 53, 87);
+}
+@media (max-width: 801.98px) {
+  .navbar-expand-lg > .container,
+  .navbar-expand-lg > .container-fluid, .navbar-expand-lg > .container-sm, .navbar-expand-lg > .container-md, .navbar-expand-lg > .container-lg, .navbar-expand-lg > .container-xl {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 802px) {
+  .navbar-expand-lg {
+      -ms-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+  }
+  .navbar-expand-lg .navbar-nav {
+      -ms-flex-direction: row;
+      flex-direction: row;
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu {
+      position: absolute;
+  }
+  .navbar-expand-lg .navbar-nav .nav-link {
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+  }
+  .navbar-expand-lg > .container,
+  .navbar-expand-lg > .container-fluid, .navbar-expand-lg > .container-sm, .navbar-expand-lg > .container-md, .navbar-expand-lg > .container-lg, .navbar-expand-lg > .container-xl {
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  }
+  .navbar-expand-lg .navbar-collapse {
+      display: -ms-flexbox !important;
+      display: flex !important;
+      -ms-flex-preferred-size: auto;
+      flex-basis: auto;
+  }
+  .navbar-expand-lg .navbar-toggler {
+      display: none;
+  }
+}
+.menu{
+  /* width: 50%;
+  margin: 0 auto;
+  margin-top: 2%; */
+  background-color: rgb(223, 203, 177) !important;
+}
+.opcion{
+/*text-align: center;
+  padding: 0.5rem;
+  border-right: 1px solid blue; */
+  color: rgb(17, 100, 121) !important;
+} 
+.opcion:hover{
+  text-decoration: none;
+  background-color: rgb(235, 215, 128);
+}
+.pie{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5rem;
+  background-color: rgb(223, 203, 177);
+  margin-top: 3rem !important;
+  padding-top: 2rem;
+
+  /* padding-bottom: 2rem; */
+  /* mt-5 pt-2 pb-2 */
+}
+.imagen{
+  max-width: 100%;
+  height: auto;
+}
+.icono{
+  font-size: 30px;
+  color: rgb(17, 100, 121);
+}
+.rojo{
+  background-color: red;
+}
+.azul{
+  background-color: blue;
+}
+.verde{
+  background-color: green;
 }
