@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    {{!-- navBar --}}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light menu">
+        <a class="navbar-brand" href="tesorosImpresos.html"><i class="fas fa-book-open"></i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+               <a class="nav-link opcion" href="index.html">Inicio<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link opcion" href="registro.html">Registro</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link opcion" href="login.html">Iniciar Sesion</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link opcion" href="contacto.html">Contacto</a>
+            </li>
+          </ul>
+          <div class="nav-item">
+            <a class="nav-link opcion" href="contacto.html">Hola</a>
+          </div>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+    </nav>
+    {{{body}}}
+    {{!-- Footer --}}
+    <footer class="pie">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-3 col-md-12 col-sm-12 rojo">
+                    <!-- <div class="row">
+                        <span>Busquenos en nuestras redes</span>
+                    </div> -->
+                    <a href="#"><i class="fab fa-facebook-square icono"></i></a>
+                    <a href="#"><i class="fab fa-twitter-square icono ml-1"></i></a>
+                    <a href="#"><i class="fab fa-instagram-square icono ml-1"></i></a>
+                    <div class="row mt-3 justify-content-start">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-12 col-sm-12 azul">
+                    <span>Ubicacion</span>
+                </div>
+                <div class="col-lg-3 col-md-12 col-sm-12 verde">
+                    <span>Contacto</span>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <script src="script1.js"></script>
+    <script src="https://kit.fontawesome.com/af4e1d9cae.js" crossorigin="anonymous"></script>
+  </body>
+</html>
