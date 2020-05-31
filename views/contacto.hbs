@@ -1,0 +1,37 @@
+<section class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4 mb-3">Contacto</h1>
+        <p class="lead">Puede contactarse con nosotros a <a href="mailto:tesorosimpresos@gmail.com">tesorosimpresos@gmail.com</a> o llenando el siguiente formulario:</p>
+    </div>
+</section>
+
+<!-- formulario -->
+<section class="container">
+    <div class="row">
+        <div class="col-xl-6">
+            <form method = "POST" action="/contacto">
+                <div class="form-group">
+                    <label for="mail">Email:</label>
+                    <input class="form-control" type="email" name="mail" id="mail" autofocus required placeholder="Email">
+                
+                </div>
+
+                <div class="form-group">
+                    <label for="asunto">Asunto:</label>
+                    <input class="form-control" type="text" name="asunto" id="asunto" required placeholder="Asunto">
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea class="form-control" name="mensaje" id="mensaje" rows="5" required></textarea>
+                </div>
+
+                <button class="btn btn-success" type="submit">Enviar</button>
+                <button class="btn btn-warning ml-2" type="reset">Borrar</button>
+            </form>
+        </div>
+        <div class="col">
+            <img width="400" height="240" src="https://lapiedradesisifo.com/wp-content/uploads/2019/04/800px-Libro_de_los_Ep%C3%ADtomes.jpg" alt="imagen de un libro"/>
+        </div>
+    </div>
+</section>
