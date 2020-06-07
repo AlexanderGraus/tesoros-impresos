@@ -1,3 +1,15 @@
-<h1>{{cita.autor}}</h1>
-<p>cita: "{{cita.cita}}"</p>
-<a href="/citas/" class="btn btn-primary">Ver todas</a>
+<div class="container">
+    <div class="card mt-5">
+    <div class="card-header">
+        Quote
+    </div>
+    <div class="card-body">
+        <blockquote class="blockquote mb-0">
+        <p>"{{cita.cita}}"</p>
+        <footer class="blockquote-footer">{{cita.autor}} en <cite title="Source Title">{{cita.libro}}</cite></footer>
+        </blockquote>
+    </div>
+    </div>
+    <a href="/citas/" class="btn btn-primary mt-2">Ver todas las citas</a>
+
+</div>
