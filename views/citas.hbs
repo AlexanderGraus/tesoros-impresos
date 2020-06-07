@@ -1,0 +1,17 @@
+<section class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4 mb-3">Citas Literarias</h1>
+        <p class="lead">Aqui puede leer las ultimas citas subidas</p>
+    </div>
+</section>
+<div class="container">
+    <div class="row">
+        {{#each citas}}
+            <div class="col">
+                <div class="row"><span>Autor: {{autor}}</span></div>
+                <div class="row"><span>Libro: {{libro}}</span></div>
+                <a href="/citas/{{id}}" class="btn btn-primary">Leer cita</a>
+            </div>
+        {{/each}}
+    </div>
+</div>
