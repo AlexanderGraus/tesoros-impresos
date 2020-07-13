@@ -3,6 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const session = require('express-session');
+const dotenv = require('dotenv');
+dotenv.config();
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -10,7 +13,7 @@ const registroRouter = require('./routes/registro');
 const loginRouter = require('./routes/login');
 const contactoRouter = require('./routes/contacto');
 const citasRouter = require('./routes/citas');
-
+const adminCitasRouter = require('./routes/admin/adminCitas');
 var app = express();
 
 // view engine setup
@@ -24,12 +27,17 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // paginas habilitadas al usuario
+app.use(session({secret: 'cita_', resave: true, saveUninitialized: false, cookie:{maxAge: null}}));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/registro',registroRouter);
 app.use('/login',loginRouter);
 app.use('/contacto',contactoRouter);
 app.use('/citas',citasRouter);
+
+/* Admin*/
+
+app.use('/admin/citas',adminCitasRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

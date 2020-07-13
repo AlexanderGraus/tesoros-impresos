@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+
   </head>
   <body>
     {{!-- navBar --}}
     <nav class="navbar navbar-expand-lg navbar-light bg-light menu">
-        <a class="navbar-brand" href="tesorosImpresos.html"><i class="fas fa-book-open"></i></a>
+        <a class="navbar-brand" href="#"><i class="fas fa-book-open"></i></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -24,16 +26,19 @@
             <li class="nav-item">
                 <a class="nav-link opcion" href="/contacto/">Contacto</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link opcion" href="/foros/">Foros</a>
+            </li>
           </ul>
           <div class="nav-item dropdown">
         <a class="nav-link dropdown-toggle opcion" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Identificarme
         </a>
         <div class="dropdown-menu menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item opcion" href="login">Iniciar Sesion</a>
-          <a class="dropdown-item opcion" href="registro">Registrarme</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item opcion" href="/login/">Iniciar Sesion</a>
+          <a class="dropdown-item opcion" href="/registro/">Registrarme</a>
+          {{!-- <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a> --}}
         </div>
       </div>
 
@@ -48,9 +53,9 @@
     <footer class="container-fluid pie">
             <div class="row justify-content-center">
                 <div class="col-lg-3 col-md-3 col-sm-12 rojo">
-                    <!-- <div class="row">
+                    {{!-- <div class="row">
                         <span>Busquenos en nuestras redes</span>
-                    </div> -->
+                    </div> --}}
                     <a href="#"><i class="fab fa-facebook-square icono"></i></a>
                     <a href="#"><i class="fab fa-twitter-square icono ml-1"></i></a>
                     <a href="#"><i class="fab fa-instagram-square icono ml-1"></i></a>
@@ -60,8 +65,13 @@
                 <div class="col-lg-3 col-md-3 col-sm-12 azul">
                     <span>Ubicacion</span>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 verde">
-                    <span>Contacto</span>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="row mt-3 justify-content-center">
+                      <span>Contacto</span>
+                    </div>
+                    <div class="row">
+                      <a class="p-3" href="mailto:tesorosimpresos123@gmail.com">tesorosimpresos123@gmail.com</a>
+                    </div>
                 </div>
             </div>
     </footer>
