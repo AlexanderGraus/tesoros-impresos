@@ -14,6 +14,7 @@ const loginRouter = require('./routes/login');
 const contactoRouter = require('./routes/contacto');
 const citasRouter = require('./routes/citas');
 const adminCitasRouter = require('./routes/admin/adminCitas');
+const adminIndexRouter = require('./routes/admin/adminIndex');
 var app = express();
 
 // view engine setup
@@ -36,7 +37,7 @@ app.use('/contacto',contactoRouter);
 app.use('/citas',citasRouter);
 
 /* Admin*/
-
+app.use('/admin',adminIndexRouter);
 app.use('/admin/citas',adminCitasRouter);
 
 // catch 404 and forward to error handler

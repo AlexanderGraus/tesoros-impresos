@@ -15,6 +15,7 @@ router.post('/', async (req,res)=>{
         if(resultado.length == 1){
             //significa que existe el usuario
             // crear la variable de sesion (super global)
+            req.session.user = true;
             req.session.idUsuario = resultado[0].id;
             req.session.nombreUsuario = resultado[0].nombre;
             req.session.apellidoUsuario = resultado[0].apellido;
