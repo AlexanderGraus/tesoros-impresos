@@ -10,7 +10,7 @@ Utiliza las siguientes tecnologias:
 
 Funciones del sitio:
 *Registro y Login
-* Subida y modificacion de citas literarias
+*Subida y modificacion de citas literarias
 
 Futuras actualizaciones:
 *Poder subir biografias
