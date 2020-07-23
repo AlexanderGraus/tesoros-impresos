@@ -18,14 +18,14 @@
                 </thead>
                 <tbody>
                     {{#each citas}}
-                    <tr>
+                    <tr id="{{id}}">
                         <td>{{autor}}</td>
                         <td>{{cita}}</td>
                         <td>{{libro}}</td>
                         <td><a href="">Editar</a></td>
                         {{!-- tengo mandarle el id para saber cual debe borrar --}}
                         {{!-- ruta: /admin/baja/id --}}
-                        <td><a href="baja/{{id}}">Borrar</a></td>
+                        <td><a onclick="borrar({{id}})" href="#">Borrar</a></td>
                     </tr>
                     {{/each}}
                 </tbody>
@@ -33,3 +33,5 @@
         </div>
     </div>
 </div>
+<script src="/javascripts/adminCitas.js"></script>
+

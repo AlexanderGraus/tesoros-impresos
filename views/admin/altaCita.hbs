@@ -1,29 +1,30 @@
-<div class="container" style="margin-top: 10vh;">
+<section class="container" style="margin-top: 10vh;">
     <div class="row">
-        <div class="col-12">
-            <h4>Citas cargadas</h4>
-        </div>
-        <div class="col-12">
-            <form method="POST" action="/admin/citas/alta">
-                <div class="col-4" style="padding-left: 0rem;">
-                    <div class="form-group">
-                        <label for="autor">Autor:</label>
-                        <input type="text" id="autor" name="autor" class="form-control">
-                    </div>
-
-                </div>
+        <h4>Subir Cita</h4>
+    </div>
+ 
+        <form method="POST" action="/admin/citas/alta">
+            <div class="col-4" style="padding-left: 0rem;">
                 <div class="form-group">
-                    <label for="cita">Cita:</label>
-                    <textarea class="form-control" name="cita" id="cita" rows="10"></textarea>
+                    <label for="autor">Autor:</label>
+                    <input type="text" id="autor" name="autor" class="form-control">
                 </div>
+
+            </div>
+            <div class="form-group">
+                <label for="cita">Cita:</label>
+                <textarea class="form-control" name="cita" id="cita" rows="10"></textarea>
+            </div>
+            <div class="col-4">
                 <div class="form-group">
                     <label for="libro">Libro donde se encuentra:</label>
                     <input type="text" id="libro" name="libro" class="form-control">
                 </div>
+            <div class="col-12 text-center">
                 <h4 class="text-success">{{message}}</h4>
-                <button type="submit" class="btn btn-primary btn-block">Subir</button>
-            </form>
+                <button type="submit" class="btn btn-primary text-center">Subir</button>
 
-        </div>
-    </div>
-</div>
+            </div>            
+        </form>
+</section>
+<script src="/javascripts/altaCita.js"></script>

@@ -28,7 +28,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // paginas habilitadas al usuario
+
 app.use(session({secret: 'cita_', resave: true, saveUninitialized: false, cookie:{maxAge: null}}));
+//cookie: cuanto dura una sesion
+// secret: la forma de encriptar el dato.
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/registro',registroRouter);
