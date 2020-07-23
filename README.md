@@ -9,10 +9,12 @@ Utiliza las siguientes tecnologias:
 *Handlebars para la creacion de paginas dinamicas
 
 Funciones del sitio:
+
 *Registro y Login
 * Subida y modificacion de citas literarias
 
 Futuras actualizaciones:
+
 *Poder subir biografias
 *Subir imagenes junto a las citas y biografias
 *Crear comentarios 
