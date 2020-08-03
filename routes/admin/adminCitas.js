@@ -12,7 +12,7 @@ router.put('/baja/:id', async(req,res)=>{
         const {id} = req.params;
         console.log(id);
         const resultado =  await service.update(id,{estado:0});
-        res.json({success: true});
+        res.json({success: true,id});
     } catch (error) {
         console.log(error);
         res.json({success: false});

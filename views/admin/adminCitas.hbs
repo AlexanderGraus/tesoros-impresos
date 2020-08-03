@@ -33,5 +33,27 @@
         </div>
     </div>
 </div>
-<script src="/javascripts/adminCitas.js"></script>
+{{!-- <script src="/javascripts/adminCitas.js"></script> --}}
 
+<script>
+    const borrar = (id) =>{
+    fetch(`/admin/citas/baja/${id}`, {
+        method: 'PUT'
+    })
+        .then(response => response.json())
+        .then(data => message(data));
+}
+
+const message = (datos) =>{
+    if(datos.success){
+        alert('cita eliminada');
+        console.log(datos.id);
+        const fila = document.getElementById(datos.id)
+        const padre = fila.parentNode;
+        padre.removeChild(fila);
+        
+    }else{
+        alert('error');
+    }
+}
+</script>
