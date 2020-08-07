@@ -43,7 +43,7 @@ router.post('/alta', async (req,res)=>{
         const {autor,cita,libro} = req.body;
         //validar para no subir una cita vacia
         const obj ={
-            id_usuario: 1, // esto lo voy a tener que cambiar por el usuario que este logueado
+            id_usuario: req.session.idUsuario,
             autor: autor,
             cita: cita,
             libro: libro
