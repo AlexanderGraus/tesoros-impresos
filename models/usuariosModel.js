@@ -12,4 +12,17 @@ getUser = async(mail, password)=>{
     }
 } 
 
-module.exports = {getUser};
+const create = async (obj)=>{
+    try {
+        
+        const query = "INSERT INTO ?? SET ?";
+        const params = [process.env.TABLA_USUARIO,obj]
+        const rows = await pool.query(query,params);
+        return rows.insertId;  
+        
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+module.exports = {getUser,create};
