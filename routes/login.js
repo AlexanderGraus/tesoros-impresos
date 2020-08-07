@@ -21,7 +21,7 @@ router.post('/', async (req,res)=>{
             req.session.nombreUsuario = resultado[0].nombre;
             req.session.apellidoUsuario = resultado[0].apellido;
             console.log(`el nombre del usuario es: ${req.session.nombreUsuario}`);
-            res.redirect('/');
+            res.redirect('/admin/citas');
         }else{
             res.render('login', {message: 'Usuario o contraseña incorrectos'});
         }
