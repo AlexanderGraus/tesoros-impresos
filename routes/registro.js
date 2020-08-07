@@ -9,15 +9,13 @@ router.get('/',(req,res)=>{
 router.post('/',async (req,res)=>{
     try {
         const {nombre,apellido,correo,password,usuario} = req.body;
-        console.log('el correo es:'+correo);
         const obj ={nombre,apellido,correo,password,usuario};
-        const res = await service.create(obj);
-        console.log(`usuario registrado con el id ${res}`);
-        res.render('registro',{message: 'Usuario registrado'});
-
+        const respuesta = await service.create(obj);
+        console.log(`usuario registrado con el id ${respuesta}`);
+        res.json({success: true});
     } catch (error) {
         console.log(error);
-        res.render('registro',{message: error});
+        res.json({success: false});
     }
 });
 module.exports = router;
