@@ -1,29 +1,34 @@
 <section class="container" style="margin-top: 10vh;">
     <div class="row">
-        <h4>Subir Cita</h4>
+        <h4>Editar Cita</h4>
+    
     </div>
- 
-        <form method="POST" action="/admin/citas/alta">
+        <form method="POST" action="/admin/citas/editar/{{cita.id}}">
             <div class="col-4" style="padding-left: 0rem;">
                 <div class="form-group">
                     <label for="autor">Autor:</label>
-                    <input type="text" id="autor" name="autor" class="form-control">
+                    <input type="text" id="autor" name="autor" class="form-control" value="{{cita.autor}}">
                 </div>
 
             </div>
             <div class="form-group">
                 <label for="cita">Cita:</label>
-                <textarea class="form-control" name="cita" id="cita" rows="10"></textarea>
+                <textarea class="form-control" name="cita" id="cita" rows="10">{{cita.cita}}</textarea>
             </div>
             <div class="col-4">
                 <div class="form-group">
                     <label for="libro">Libro donde se encuentra:</label>
-                    <input type="text" id="libro" name="libro" class="form-control">
+                    <input type="text" id="libro" name="libro" class="form-control" value="{{cita.libro}}">
                 </div>
-            <div class="col-12 text-center">
+            </div>
+            
+            <div class="col-12 mt-2">
                 <h4 class="text-success">{{message}}</h4>
-                <button type="submit" class="btn btn-primary text-center">Subir</button>
-
+                <button type="submit" class="btn btn-primary">Editar</button>
+                <button type="reset" class="btn btn-primary">Volver</button>
             </div>            
+
+
         </form>
+</div>
 </section>

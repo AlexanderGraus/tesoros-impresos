@@ -5,6 +5,19 @@ const service = require('../../models/citasModel');
 //getCita -> para editar, getCitas -> para listar
 
 // LAS RUTAS CON MAS JERARQUIA (CON MAS /) VAN MAS ARRIBA
+/* Modificar cita*/
+router.get('/editar/:id',async(req,res)=>{
+    const {id} = req.params;
+    try {
+        const cita = await service.getCita(id);
+        res.render('admin/modifCita',{title: 'Editar Cita',cita});
+    } catch (error) {
+        console.log(error);
+    }
+
+});
+
+
 /* Borrar una cita */
 router.put('/baja/:id', async(req,res)=>{
     try {
