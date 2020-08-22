@@ -17,7 +17,7 @@ Sitio web en el que se puden compartir lecturas, citas y autores
 
 
 
-<h4>Futuras actualizaciones:<h4>
+<h4>Futuras actualizaciones:</h4>
 <ul>
 	<li>Poder subir biografias</li>
 	<li>Subir imagenes junto a las citas y biografias</li>	
