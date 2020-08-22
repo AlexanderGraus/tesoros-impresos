@@ -2,6 +2,11 @@
 
 Sitio web en el que se puden compartir lecturas, citas y autores
 
+<h2>Funciones del sitio:</h2>
+<ul>
+	<li>Registro y Login</li>
+	<li>Subida y modificacion de citas literarias</li>
+</ul>
 
 <h4>Utiliza las siguientes tecnologias:</h2>
 <ul>
@@ -10,12 +15,7 @@ Sitio web en el que se puden compartir lecturas, citas y autores
 	<li>Handlebars para la creacion de paginas dinamicas</li>
 </ul>
 
-<h2>Funciones del sitio:</h2>
-<ul>
 
-	<li>Registro y Login</li>
-	<li>Subida y modificacion de citas literarias</li>
-</ul>
 
 <h4>Futuras actualizaciones:<h2>
 <ul>
