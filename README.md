@@ -1,20 +1,25 @@
 # tesoros-impresos
+
 Sitio web en el que se puden compartir lecturas, citas y autores
 
 
-Utiliza las siguientes tecnologias:
+<h2>Utiliza las siguientes tecnologias:</h2>
+<ul>
+	<li>Bootstrap para el diseño y la maquetacion</li>
+	<li>Node para el manejo de rutas y la conexion con la base de datos</li>
+	<li>Handlebars para la creacion de paginas dinamicas</li>
+</ul>
 
-*Bootstrap para el diseño y la maquetacion
-*Node para el manejo de rutas y la conexion con la base de datos
-*Handlebars para la creacion de paginas dinamicas
+<h2>Funciones del sitio:</h2>
+<ul>
 
-Funciones del sitio:
-
-*Registro y Login
-*Subida y modificacion de citas literarias
-
-Futuras actualizaciones:
-
-*Poder subir biografias
-*Subir imagenes junto a las citas y biografias
-*Crear comentarios 
+	<li>Registro y Login</li>
+	<li>Subida y modificacion de citas literarias</li>
+</ul>
+<br>
+<h2>Futuras actualizaciones:<h2>
+<ul>
+	<li>Poder subir biografias</li>
+	<li>Subir imagenes junto a las citas y biografias</li>	
+	<li>Crear comentarios <li>
+</ul>
