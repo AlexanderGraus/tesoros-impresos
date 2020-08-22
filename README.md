@@ -8,7 +8,7 @@ Sitio web en el que se puden compartir lecturas, citas y autores
 	<li>Subida y modificacion de citas literarias</li>
 </ul>
 
-<h4>Utiliza las siguientes tecnologias:</h2>
+<h4>Utiliza las siguientes tecnologias:</h4>
 <ul>
 	<li>Bootstrap para el diseño y la maquetacion</li>
 	<li>Node para el manejo de rutas y la conexion con la base de datos</li>
@@ -17,7 +17,7 @@ Sitio web en el que se puden compartir lecturas, citas y autores
 
 
 
-<h4>Futuras actualizaciones:<h2>
+<h4>Futuras actualizaciones:<h4>
 <ul>
 	<li>Poder subir biografias</li>
 	<li>Subir imagenes junto a las citas y biografias</li>	
