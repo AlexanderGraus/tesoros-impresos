@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/pwa20202C', { useNewUrlParser: true }, function (error) {
+mongoose.connect('mongodb://localhost/tesorosimpresos', { useNewUrlParser: true }, function (error) {
     if (error) {
         throw error;
     } else {
