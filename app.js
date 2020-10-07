@@ -44,16 +44,21 @@ app.use('/contacto',contactoRouter);
 app.use('/citas',citasRouter);
 
 /* Admin*/
-app.use('/admin',adminIndexRouter);
-app.use('/admin/citas',adminCitasRouter);
+app.use('/admin',validateUser,adminIndexRouter);
+app.use('/admin/citas',validateUser,adminCitasRouter);
 
+// en cada request privado me tiene que enviar el token
+// lo vamos a recibir en header.
 function validateUser(req,res,next){
   jwt.verify(req.headers['x-access-token'],req.app.get('secretKey'), function(err,decoded){
     if(err){
       res.json({message:err.message});
     }else{
       console.log('el decoded es '+decoded);
+      // decoded esta la info que asocie al token
+      // en cualquier servicio puedo acceer a tokenData
       req.body.tokenData = decoded;
+      // continua con la soguiente funcion
       next();
     }
   });
