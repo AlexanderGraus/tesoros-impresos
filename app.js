@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session');
 const dotenv = require('dotenv');
+const jwt = require('jsonwebtoken');
 dotenv.config();
 
 var indexRouter = require('./routes/index');
@@ -16,6 +17,8 @@ const citasRouter = require('./routes/citas');
 const adminCitasRouter = require('./routes/admin/adminCitas');
 const adminIndexRouter = require('./routes/admin/adminIndex');
 var app = express();
+
+app.set('secretKey',process.env.SECRET_KEY);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -44,6 +47,18 @@ app.use('/citas',citasRouter);
 app.use('/admin',adminIndexRouter);
 app.use('/admin/citas',adminCitasRouter);
 
+function validateUser(req,res,next){
+  jwt.verify(req.headers['x-access-token'],req.app.get('secretKey'), function(err,decoded){
+    if(err){
+      res.json({message:err.message});
+    }else{
+      console.log('el decoded es '+decoded);
+      req.body.tokenData = decoded;
+      next();
+    }
+  });
+}
+app.validateUser = validateUser;
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -57,7 +72,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.json({code:err.code, mesg:err.message});
 });
 
 module.exports = app;
