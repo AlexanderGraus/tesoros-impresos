@@ -3,25 +3,34 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 module.exports = {
-    getAll: async(req,res,next) =>{
-        const usarios = await userModel.find({});
-        res.json(usarios);
-    },
-    getById: async(req,res,next) =>{
-        const user = await userModel.findById(req.params.id);
-        res.json(user);
+    //tengo que cambiar estas funciones por el validate y el create
+    validate: async (req,res,next)=>{
+        try {
+            const {error, message, usuario} = await userModel.validateUser(req.body.user,req.body.password);
+            if(!error){
+                //aca no puedo enviar informacion sensible
+                const token = jwt.sign({userId:usuario._id},req.app.get('secretKey'));
+                res.json({message,token});
+                return;
+            }
+            res.json({message});
+        } catch (error) {
+            //le paso el eror al manejador de error de express
+            next(error);
+        }
     },
     create: async(req,res,next) =>{
-        const user = new userModel(req.body);
-        await user.save();
-        res.json(user);
+        try {
+            const user = new userModel({
+                usuario: req.body.user,
+                nombre: req.body.nombre,
+                correo: req.body.mail,
+                password: req.body.password
+            });
+            const res = await user.save();
+            res.json(res);
+        } catch (error) {
+            next(error);
+        }
     },
-    update: async (req,res,next) =>{
-        const user = await userModel.update({_id: req.params.id},req.body, {multi:false});
-        res.json(user);
-    },
-    delete: async (req,res,next) =>{
-        const user = await userModel.deleteOne({_id: req.params.id});
-        res.json(user);
-    }
 };
