@@ -29,11 +29,6 @@ const userSchema = new mongoose.Schema({
         required: [true,errorMessage.GENERAL.campo_obligatorio],
         maxlength: 20
     },
-    apellido: {
-        type: String,
-        required: [true,errorMessage.GENERAL.campo_obligatorio],
-        maxlength: 20
-    },
     correo: {
         type: String,
         required: [true,errorMessage.GENERAL.campo_obligatorio],
