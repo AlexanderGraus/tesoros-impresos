@@ -27,8 +27,8 @@ module.exports = {
                 correo: req.body.mail,
                 password: req.body.password
             });
-            const res = await user.save();
-            res.json(res);
+            const respuesta = await user.save();
+            res.json(respuesta);
         } catch (error) {
             next(error);
         }
