@@ -10,7 +10,7 @@ module.exports = {
             const citas = await citasModel.paginate(queryFind,{
                 sort: {autor:1},
                 populate: 'usuarios',
-                limit: req.query.limit || 1,
+                limit: req.query.limit || 10,
                 page: req.query.page || 1
             });
             res.status(200).json(citas);
