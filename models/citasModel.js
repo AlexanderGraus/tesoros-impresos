@@ -22,5 +22,5 @@ const citaSchema = new mongoose.Schema({
     },
     
 });
-
+citaSchema.plugin(mongoose.mongoosePaginate);
 module.exports = mongoose.model("citas", citaSchema);
