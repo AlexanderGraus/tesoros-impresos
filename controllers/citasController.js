@@ -1,14 +1,36 @@
 const citasModel = require('../models/citasModel');
-const usersModel = require('../models/usuariosModel');
 
 module.exports = {
     getAll: async(req,res,next) =>{
-        const citas = await citasModel.find({});
-        res.json(citas);
+        try{
+            let queryFind ={};
+            if(req.query.buscar){
+                queryFind = {autor:{$regex:".*"+req.query.buscar+".*",$options:"i"}};
+            }
+            const citas = await citasModel.paginate(queryFind,{
+                sort: {autor:1},
+                populate: 'usuarios',
+                limit: req.query.limit || 1,
+                page: req.query.page || 1
+            });
+            res.status(200).json(citas);
+
+        }catch(error){
+            next(error);
+        }
     },
     getById: async(req,res,next) =>{
-        const cita = await citasModel.findById(req.params.id);
-        res.json(cita);
+        try {
+            const cita = await citasModel.findById(req.params.id);
+            if(!cita){
+                res.status(200).json({message:'no existe la cita'});
+                return;
+            }
+            res.status(200).json(cita);
+            
+        } catch (error) {
+            next(error);
+        }
     },
     create: async(req,res,next) =>{
         try {
