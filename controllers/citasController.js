@@ -19,7 +19,12 @@ module.exports = {
         res.json(cita);
     },
     delete: async (req,res,next) =>{
-        const cita = await citasModel.deleteOne({_id: req.params.id});
-        res.json(cita);
+        try {
+            const cita = await citasModel.deleteOne({_id: req.params.id});
+            res.status(200).json(cita);
+            
+        } catch (error) {
+            next(error);
+        }
     }
 };
