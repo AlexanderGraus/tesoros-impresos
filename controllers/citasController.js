@@ -15,8 +15,13 @@ module.exports = {
         res.json(cita);
     },
     update: async (req,res,next) =>{
-        const cita = await citasModel.update({_id: req.params.id},req.body, {multi:false});
-        res.json(cita);
+        try {
+            const cita = await citasModel.update({_id: req.params.id},req.body, {multi:false});
+            res.status(200).json(cita);
+            
+        } catch (error) {
+            next(error);
+        }
     },
     delete: async (req,res,next) =>{
         try {
