@@ -32,6 +32,12 @@ const userSchema = new mongoose.Schema({
     correo: {
         type: String,
         required: [true,errorMessage.GENERAL.campo_obligatorio],
+        validate:{
+            validator: (mail) =>{
+                return validators.emailValidate(mail);
+            },
+            message:errorMessage.USERS.mailIncorrect
+        }
     },
     password: {
         type: String,
