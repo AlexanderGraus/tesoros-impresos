@@ -1,6 +1,10 @@
 const mongoose = require("../bin/mongodb");
 
 const citaSchema = new mongoose.Schema({
+    user:{
+        type: mongoose.Schema.ObjectId,
+        ref: "usuarios"
+    },
     autor: {
         type: String,
         index: true,
