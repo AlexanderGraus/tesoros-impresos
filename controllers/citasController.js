@@ -1,4 +1,5 @@
 const citasModel = require('../models/citasModel');
+const usersModel = require('../models/usuariosModel');
 
 module.exports = {
     getAll: async(req,res,next) =>{
@@ -10,9 +11,19 @@ module.exports = {
         res.json(cita);
     },
     create: async(req,res,next) =>{
-        const cita = new citasModel(req.body);
-        await cita.save();
-        res.json(cita);
+        try {
+            const cita = new citasModel({
+                user: req.body.tokenData,
+                autor: req.body.autor,
+                libro: req.body.libro,
+                cita: req.body.cita
+            });
+            const doc = await cita.save();
+            res.status(201).json(doc);
+            
+        } catch (error) {
+            next(error);
+        }
     },
     update: async (req,res,next) =>{
         try {

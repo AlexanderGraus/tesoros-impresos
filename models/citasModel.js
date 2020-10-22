@@ -1,4 +1,5 @@
 const mongoose = require("../bin/mongodb");
+const errorMessage = require('../utils/errorMessage');
 
 const citaSchema = new mongoose.Schema({
     user:{
@@ -8,7 +9,7 @@ const citaSchema = new mongoose.Schema({
     autor: {
         type: String,
         index: true,
-        required: true
+        required: [true,errorMessage.GENERAL.campo_obligatorio]
     },
     libro: {
         type: String,
@@ -17,7 +18,7 @@ const citaSchema = new mongoose.Schema({
     },
     cita: {
         type: String,
-        required: true
+        required: [true,errorMessage.GENERAL.campo_obligatorio]
     },
     
 });
