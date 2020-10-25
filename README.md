@@ -1,25 +1,18 @@
-# tesoros-impresos
+# tesoros-impresos Backend
 
-Sitio web en el que se puden compartir lecturas, citas y autores
+Back en del Sitio web en el que se puden compartir lecturas, citas y autores.
 
-<h2>Funciones del sitio:</h2>
+<h2>Funcionalidades:</h2>
 <ul>
-	<li>Registro y Login</li>
-	<li>Subida y modificacion de citas literarias</li>
+	<li>Conexion con la base de datos a traves de Mongoose</li>
+	<li>Login con autenticacion de usuarios con JWT</li>
+	<li>Alta baja y modificacion de  citas literarias</li>
 </ul>
 
-<h4>Utiliza las siguientes tecnologias:</h4>
+<h2>Utiliza las siguientes tecnologias:</h2>
 <ul>
-	<li>Bootstrap para el diseño y la maquetacion</li>
-	<li>Node para el manejo de rutas y la conexion con la base de datos</li>
-	<li>Handlebars para la creacion de paginas dinamicas</li>
-</ul>
-
-
-
-<h4>Futuras actualizaciones:</h4>
-<ul>
-	<li>Poder subir biografias</li>
-	<li>Subir imagenes junto a las citas y biografias</li>	
-	<li>Crear comentarios </li>
+	<li>Node + Express</li>
+	<li>Mongoose para la conexion con la base de datos en MongoDB</li>
+	<li>Nodemailer para el envio de mails</li>
+	<li>Bcrypt para la encriptacion de contraseñas</li>
 </ul>
