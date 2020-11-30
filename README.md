@@ -1,6 +1,6 @@
 # tesoros-impresos Backend
 
-Back en del Sitio web en el que se puden compartir lecturas, citas y autores.
+Back end del Sitio web en el que se puden compartir lecturas, citas y autores.
 
 <h2>Funcionalidades:</h2>
 <ul>
