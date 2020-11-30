@@ -35,7 +35,7 @@ module.exports = {
     create: async(req,res,next) =>{
         try {
             const cita = new citasModel({
-                user: req.body.tokenData,
+                user: req.body.tokenData.userId,
                 autor: req.body.autor,
                 libro: req.body.libro,
                 cita: req.body.cita
