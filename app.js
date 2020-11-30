@@ -30,6 +30,21 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// este coidgo es para poder comunicarme desde el localhost de angular al localhost de express
+/** HEADER INICIO */
+app.use(function(req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin','*');
+  res.setHeader('Access-Control-Allow-Methods','GET,POST,DELETE,PUT');
+  next();
+});
+app.options("/*", function(req, res, next){
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With,x-access-token');
+  res.sendStatus(200);
+});
+/** HEADER FIN */
+
 // paginas habilitadas al usuario
 
 app.use(session({secret: 'cita_', resave: true, saveUninitialized: false, cookie:{maxAge: null}}));
@@ -58,6 +73,7 @@ function validateUser(req,res,next){
       // decoded esta la info que asocie al token
       // en cualquier servicio puedo acceer a tokenData
       req.body.tokenData = decoded;
+      console.log(decoded);
       // continua con la soguiente funcion
       next();
     }
