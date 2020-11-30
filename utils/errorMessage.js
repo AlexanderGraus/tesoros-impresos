@@ -5,7 +5,7 @@ module.exports={
         maxlength:"El campo {PATH} debe contener no mas de {VALUE}"
     },
     USERS:{
-        userExist:"El {VALUE} ya existe",
+        userExist:"El usuario {VALUE} ya existe",
         passwordIncorrect:"El {PATH} debe contener al menos 1 letra, 1 minuscula, 1 mayuscula",
         mailIncorrect: "{PATH} invalido"
     }
