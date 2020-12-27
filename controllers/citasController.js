@@ -35,13 +35,6 @@ module.exports = {
             next(error);
         }
     },
-    // getByUser: async(req,res,next)=>{
-    //     try {
-            
-    //     } catch (error) {
-    //         next(error);      
-    //     }
-    // },
     create: async(req,res,next) =>{
         try {
             const cita = new citasModel({
