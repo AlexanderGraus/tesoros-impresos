@@ -5,7 +5,10 @@ module.exports = {
         try{
             let queryFind ={};
             if(req.query.buscar){
-                queryFind = {autor:{$regex:".*"+req.query.buscar+".*",$options:"i"}};
+                queryFind = {cita:{$regex:".*"+req.query.buscar+".*",$options:"i"}};
+            }
+            if(req.query.usuario){
+                queryFind = {user:req.query.usuario};
             }
             const citas = await citasModel.paginate(queryFind,{
                 sort: {autor:1},
@@ -32,6 +35,13 @@ module.exports = {
             next(error);
         }
     },
+    // getByUser: async(req,res,next)=>{
+    //     try {
+            
+    //     } catch (error) {
+    //         next(error);      
+    //     }
+    // },
     create: async(req,res,next) =>{
         try {
             const cita = new citasModel({

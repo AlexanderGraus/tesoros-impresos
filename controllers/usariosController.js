@@ -10,7 +10,8 @@ module.exports = {
             if(!error){
                 //aca no puedo enviar informacion sensible
                 const token = jwt.sign({userId:usuario._id},req.app.get('secretKey'));
-                res.json({message,token});
+                const userId = usuario._id;
+                res.json({message,token,userId});
                 return;
             }
             res.json({message});

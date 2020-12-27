@@ -22,11 +22,11 @@ router.post('/', async (req,res)=>{
     try {
         const resultMail = await main({to, subject,html});
         console.log(`Clave unica del mail: ${resultMail}`);
-        res.render('contacto',{message: 'Mensaje Enviado'});
+        res.status(200).json({message: 'Mensaje Enviado'});
         
     } catch (error) {
         console.log(error);
-        res.end();    
+        res.status(400).json({message: 'error en el envio',error:error});    
     }
 });
 
