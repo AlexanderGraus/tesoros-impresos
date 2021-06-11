@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const mongoosePaginate = require('mongoose-paginate-v2');
 
-mongoose.connect('mongodb+srv://ale613:hamburguesa@cluster0.dpgld.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', { useNewUrlParser: true }, function (error) {
+mongoose.connect('mongodb://'+process.env.HOST_DB+'/'+process.env.DATABASE+'', { useNewUrlParser: true }, function (error) {
     if (error) {
         throw error;
     } else {
