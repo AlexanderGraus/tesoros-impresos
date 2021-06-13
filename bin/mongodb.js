@@ -7,7 +7,7 @@ const uri = "mongodb+srv://ale613:hamburguesa@cluster0.dpgld.mongodb.net/tesoros
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 client.connect(err => {
-  const collection = client.db("test").collection("devices");
+  const collection = client.db("tesorosimpresos").collection("citas");
   // perform actions on the collection object
   client.close();
 });
