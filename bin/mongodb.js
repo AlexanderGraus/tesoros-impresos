@@ -7,6 +7,7 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }, function (e
     } else {
         console.log('Conectado a MongoDB');
     }
+
 });
 
 mongoosePaginate.paginate.options={
