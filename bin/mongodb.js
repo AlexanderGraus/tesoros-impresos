@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const mongoosePaginate = require('mongoose-paginate-v2');
 
 const MongoClient = require('mongodb').MongoClient;
+
 const uri = "mongodb+srv://ale613:hamburguesa@cluster0.dpgld.mongodb.net/tesorosimpresos?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
