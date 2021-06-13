@@ -1,12 +1,14 @@
 const mongoose = require('mongoose');
 const mongoosePaginate = require('mongoose-paginate-v2');
 
-mongoose.connect('mongodb://'+process.env.HOST_DB+'/'+process.env.DATABASE+'', { useNewUrlParser: true }, function (error) {
-    if (error) {
-        throw error;
-    } else {
-        console.log('Conectado a MongoDB');
-    }
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://ale613:hamburguesa@cluster0.dpgld.mongodb.net/tesorosimpresos?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
 });
 
 mongoosePaginate.paginate.options={
