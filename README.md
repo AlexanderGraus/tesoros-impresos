@@ -2,6 +2,8 @@
 
 Back end del Sitio web en el que se puden compartir lecturas, citas y autores.
 
+[Visitar el sitio](https://tesoros-impresos.herokuapp.com/)
+
 <h2>Funcionalidades:</h2>
 <ul>
 	<li>Conexion con la base de datos a traves de Mongoose</li>
